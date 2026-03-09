@@ -1,0 +1,931 @@
+[
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "WebSocket",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "WebSocketDisconnect",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Request",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "MuseConnection",
+        "importPath": "eeg.muse_connection",
+        "description": "eeg.muse_connection",
+        "isExtraImport": true,
+        "detail": "eeg.muse_connection",
+        "documentation": {}
+    },
+    {
+        "label": "MuseConnection",
+        "importPath": "eeg.muse_connection",
+        "description": "eeg.muse_connection",
+        "isExtraImport": true,
+        "detail": "eeg.muse_connection",
+        "documentation": {}
+    },
+    {
+        "label": "SessionState",
+        "importPath": "services.session_manager",
+        "description": "services.session_manager",
+        "isExtraImport": true,
+        "detail": "services.session_manager",
+        "documentation": {}
+    },
+    {
+        "label": "session_manager",
+        "importPath": "services.session_manager",
+        "description": "services.session_manager",
+        "isExtraImport": true,
+        "detail": "services.session_manager",
+        "documentation": {}
+    },
+    {
+        "label": "session_manager",
+        "importPath": "services.session_manager",
+        "description": "services.session_manager",
+        "isExtraImport": true,
+        "detail": "services.session_manager",
+        "documentation": {}
+    },
+    {
+        "label": "SessionState",
+        "importPath": "services.session_manager",
+        "description": "services.session_manager",
+        "isExtraImport": true,
+        "detail": "services.session_manager",
+        "documentation": {}
+    },
+    {
+        "label": "session_manager",
+        "importPath": "services.session_manager",
+        "description": "services.session_manager",
+        "isExtraImport": true,
+        "detail": "services.session_manager",
+        "documentation": {}
+    },
+    {
+        "label": "CalibrationManager",
+        "importPath": "eeg.calibration",
+        "description": "eeg.calibration",
+        "isExtraImport": true,
+        "detail": "eeg.calibration",
+        "documentation": {}
+    },
+    {
+        "label": "PatternMapper",
+        "importPath": "patterns.pattern_mapper",
+        "description": "patterns.pattern_mapper",
+        "isExtraImport": true,
+        "detail": "patterns.pattern_mapper",
+        "documentation": {}
+    },
+    {
+        "label": "PatternMapper",
+        "importPath": "patterns.pattern_mapper",
+        "description": "patterns.pattern_mapper",
+        "isExtraImport": true,
+        "detail": "patterns.pattern_mapper",
+        "documentation": {}
+    },
+    {
+        "label": "osc_sender",
+        "importPath": "services.stream_service",
+        "description": "services.stream_service",
+        "isExtraImport": true,
+        "detail": "services.stream_service",
+        "documentation": {}
+    },
+    {
+        "label": "start_streaming",
+        "importPath": "services.stream_service",
+        "description": "services.stream_service",
+        "isExtraImport": true,
+        "detail": "services.stream_service",
+        "documentation": {}
+    },
+    {
+        "label": "SessionConfig",
+        "importPath": "models.schemas",
+        "description": "models.schemas",
+        "isExtraImport": true,
+        "detail": "models.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "SessionStartResponse",
+        "importPath": "models.schemas",
+        "description": "models.schemas",
+        "isExtraImport": true,
+        "detail": "models.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "SessionStatus",
+        "importPath": "models.schemas",
+        "description": "models.schemas",
+        "isExtraImport": true,
+        "detail": "models.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "CalibrationStatus",
+        "importPath": "models.schemas",
+        "description": "models.schemas",
+        "isExtraImport": true,
+        "detail": "models.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "PatternParameters",
+        "importPath": "models.schemas",
+        "description": "models.schemas",
+        "isExtraImport": true,
+        "detail": "models.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "PatternType",
+        "importPath": "models.schemas",
+        "description": "models.schemas",
+        "isExtraImport": true,
+        "detail": "models.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "EmotionType",
+        "importPath": "models.schemas",
+        "description": "models.schemas",
+        "isExtraImport": true,
+        "detail": "models.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "EmotionResult",
+        "importPath": "models.schemas",
+        "description": "models.schemas",
+        "isExtraImport": true,
+        "detail": "models.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "EmotionType",
+        "importPath": "models.schemas",
+        "description": "models.schemas",
+        "isExtraImport": true,
+        "detail": "models.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "EmotionType",
+        "importPath": "models.schemas",
+        "description": "models.schemas",
+        "isExtraImport": true,
+        "detail": "models.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "PatternType",
+        "importPath": "models.schemas",
+        "description": "models.schemas",
+        "isExtraImport": true,
+        "detail": "models.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "PatternParameters",
+        "importPath": "models.schemas",
+        "description": "models.schemas",
+        "isExtraImport": true,
+        "detail": "models.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "PatternType",
+        "importPath": "models.schemas",
+        "description": "models.schemas",
+        "isExtraImport": true,
+        "detail": "models.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "asyncio",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "asyncio",
+        "description": "asyncio",
+        "detail": "asyncio",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "StreamInlet",
+        "importPath": "pylsl",
+        "description": "pylsl",
+        "isExtraImport": true,
+        "detail": "pylsl",
+        "documentation": {}
+    },
+    {
+        "label": "resolve_byprop",
+        "importPath": "pylsl",
+        "description": "pylsl",
+        "isExtraImport": true,
+        "detail": "pylsl",
+        "documentation": {}
+    },
+    {
+        "label": "welch",
+        "importPath": "scipy.signal",
+        "description": "scipy.signal",
+        "isExtraImport": true,
+        "detail": "scipy.signal",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "EmotionMapper",
+        "importPath": "emotion.emotion_mapping",
+        "description": "emotion.emotion_mapping",
+        "isExtraImport": true,
+        "detail": "emotion.emotion_mapping",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Enum",
+        "importPath": "enum",
+        "description": "enum",
+        "isExtraImport": true,
+        "detail": "enum",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "SimpleUDPClient",
+        "importPath": "pythonosc.udp_client",
+        "description": "pythonosc.udp_client",
+        "isExtraImport": true,
+        "detail": "pythonosc.udp_client",
+        "documentation": {}
+    },
+    {
+        "label": "copy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "copy",
+        "description": "copy",
+        "detail": "copy",
+        "documentation": {}
+    },
+    {
+        "label": "threading",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "threading",
+        "description": "threading",
+        "detail": "threading",
+        "documentation": {}
+    },
+    {
+        "label": "uuid",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "uuid",
+        "description": "uuid",
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "SignalProcessor",
+        "importPath": "eeg.signal_processing",
+        "description": "eeg.signal_processing",
+        "isExtraImport": true,
+        "detail": "eeg.signal_processing",
+        "documentation": {}
+    },
+    {
+        "label": "EmotionModel",
+        "importPath": "emotion.emotion_model",
+        "description": "emotion.emotion_model",
+        "isExtraImport": true,
+        "detail": "emotion.emotion_model",
+        "documentation": {}
+    },
+    {
+        "label": "OscStreamSender",
+        "importPath": "services.osc_sender",
+        "description": "services.osc_sender",
+        "isExtraImport": true,
+        "detail": "services.osc_sender",
+        "documentation": {}
+    },
+    {
+        "label": "BaseSettings",
+        "importPath": "pydantic_settings",
+        "description": "pydantic_settings",
+        "isExtraImport": true,
+        "detail": "pydantic_settings",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
+        "documentation": {}
+    },
+    {
+        "label": "CORSMiddleware",
+        "importPath": "fastapi.middleware.cors",
+        "description": "fastapi.middleware.cors",
+        "isExtraImport": true,
+        "detail": "fastapi.middleware.cors",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "importPath": "api.routes",
+        "description": "api.routes",
+        "isExtraImport": true,
+        "detail": "api.routes",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "importPath": "api.websocket",
+        "description": "api.websocket",
+        "isExtraImport": true,
+        "detail": "api.websocket",
+        "documentation": {}
+    },
+    {
+        "label": "start_session",
+        "kind": 2,
+        "importPath": "api.routes",
+        "description": "api.routes",
+        "peekOfCode": "def start_session(config: SessionConfig):\n    \"\"\"\n    Start a new EEG session and check device connection.\n    \"\"\"\n    # Try to connect to Muse device\n    try:\n        muse_connection = MuseConnection(mac_address=config.mac_address)\n        connected = muse_connection.connect()\n    except Exception as e:\n        raise HTTPException(status_code=500, detail=f\"Device connection failed: {str(e)}\")",
+        "detail": "api.routes",
+        "documentation": {}
+    },
+    {
+        "label": "stop_session",
+        "kind": 2,
+        "importPath": "api.routes",
+        "description": "api.routes",
+        "peekOfCode": "def stop_session():\n    \"\"\"\n    Stop the active session.\n    \"\"\"\n    session_manager.stop_session()\n    return {\"status\": \"stopped\"}\n@router.get(\"/session/status\", response_model=SessionStatus)\ndef get_session_status():\n    \"\"\"\n    Return current session info.",
+        "detail": "api.routes",
+        "documentation": {}
+    },
+    {
+        "label": "get_session_status",
+        "kind": 2,
+        "importPath": "api.routes",
+        "description": "api.routes",
+        "peekOfCode": "def get_session_status():\n    \"\"\"\n    Return current session info.\n    \"\"\"\n    info = session_manager.get_session_info()\n    return SessionStatus(\n        session_id=info[\"session_id\"],\n        state=info[\"state\"],\n        start_time=info[\"start_time\"],\n        emotion_history_length=info[\"emotion_history_length\"]",
+        "detail": "api.routes",
+        "documentation": {}
+    },
+    {
+        "label": "run_calibration",
+        "kind": 2,
+        "importPath": "api.routes",
+        "description": "api.routes",
+        "peekOfCode": "def run_calibration():\n    \"\"\"\n    Run EEG calibration (baseline + signal quality).\n    \"\"\"\n    if not session_manager.is_active():\n        raise HTTPException(status_code=400, detail=\"No active session\")\n    # Here we would pass the Muse connection to calibration\n    # Retrieve the active MuseConnection from session_manager\n    muse_connection = getattr(session_manager, 'muse_connection', None)\n    if muse_connection is None:",
+        "detail": "api.routes",
+        "documentation": {}
+    },
+    {
+        "label": "generate_pattern",
+        "kind": 2,
+        "importPath": "api.routes",
+        "description": "api.routes",
+        "peekOfCode": "def generate_pattern(emotion: str, pattern_type: PatternType):\n    \"\"\"\n    Generate pattern parameters based on emotion and EEG features.\n    \"\"\"\n    # Use the last emotion from session history if available\n    if session_manager.emotion_history:\n        emotion_value = session_manager.emotion_history[-1]\n    else:\n        emotion_value = emotion\n        # Try to connect to Muse device using MAC address from payload",
+        "detail": "api.routes",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "api.routes",
+        "description": "api.routes",
+        "peekOfCode": "router = APIRouter()\n# Initialize calibration and pattern modules\ncalibration_manager = CalibrationManager()\npattern_mapper = PatternMapper()\nfrom config import settings\n # Muse device connection will be created per session\n# -----------------------------\n# SESSION ENDPOINTS\n# -----------------------------\n@router.post(\"/session/start\", response_model=SessionStartResponse)",
+        "detail": "api.routes",
+        "documentation": {}
+    },
+    {
+        "label": "calibration_manager",
+        "kind": 5,
+        "importPath": "api.routes",
+        "description": "api.routes",
+        "peekOfCode": "calibration_manager = CalibrationManager()\npattern_mapper = PatternMapper()\nfrom config import settings\n # Muse device connection will be created per session\n# -----------------------------\n# SESSION ENDPOINTS\n# -----------------------------\n@router.post(\"/session/start\", response_model=SessionStartResponse)\ndef start_session(config: SessionConfig):\n    \"\"\"",
+        "detail": "api.routes",
+        "documentation": {}
+    },
+    {
+        "label": "pattern_mapper",
+        "kind": 5,
+        "importPath": "api.routes",
+        "description": "api.routes",
+        "peekOfCode": "pattern_mapper = PatternMapper()\nfrom config import settings\n # Muse device connection will be created per session\n# -----------------------------\n# SESSION ENDPOINTS\n# -----------------------------\n@router.post(\"/session/start\", response_model=SessionStartResponse)\ndef start_session(config: SessionConfig):\n    \"\"\"\n    Start a new EEG session and check device connection.",
+        "detail": "api.routes",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "api.websocket",
+        "description": "api.websocket",
+        "peekOfCode": "router = APIRouter()\n@router.websocket(settings.ws_endpoint)\nasync def brain_stream(websocket: WebSocket):\n    \"\"\"\n    Streams the latest background EEG message to the frontend.\n    \"\"\"\n    await websocket.accept()\n    last_timestamp = None\n    try:\n        while True:",
+        "detail": "api.websocket",
+        "documentation": {}
+    },
+    {
+        "label": "CalibrationManager",
+        "kind": 6,
+        "importPath": "eeg.calibration",
+        "description": "eeg.calibration",
+        "peekOfCode": "class CalibrationManager:\n    \"\"\"\n    Runs calibration phase to measure baseline EEG and signal quality.\n    \"\"\"\n    def __init__(self, duration=5):\n        self.duration = duration\n        self.baseline = None\n        self.signal_quality = 0\n    def run_calibration(self, muse_connection):\n        \"\"\"",
+        "detail": "eeg.calibration",
+        "documentation": {}
+    },
+    {
+        "label": "MuseConnection",
+        "kind": 6,
+        "importPath": "eeg.muse_connection",
+        "description": "eeg.muse_connection",
+        "peekOfCode": "class MuseConnection:\n    \"\"\"\n    Handles connection to a BlueMuse EEG LSL stream.\n    \"\"\"\n    def __init__(self, mac_address=None):\n        self.inlet = None\n        self.sampling_rate = None\n        self.eeg_channels = None\n        self.mac_address = mac_address\n    def connect(self):",
+        "detail": "eeg.muse_connection",
+        "documentation": {}
+    },
+    {
+        "label": "SignalProcessor",
+        "kind": 6,
+        "importPath": "eeg.signal_processing",
+        "description": "eeg.signal_processing",
+        "peekOfCode": "class SignalProcessor:\n    \"\"\"\n    Extract EEG frequency band powers from raw signals.\n    \"\"\"\n    def __init__(self, sampling_rate=256):\n        self.sampling_rate = sampling_rate\n    def bandpower(self, data, band):\n        \"\"\"\n        Compute power of a specific frequency band using Welch PSD.\n        \"\"\"",
+        "detail": "eeg.signal_processing",
+        "documentation": {}
+    },
+    {
+        "label": "EmotionMapper",
+        "kind": 6,
+        "importPath": "emotion.emotion_mapping",
+        "description": "emotion.emotion_mapping",
+        "peekOfCode": "class EmotionMapper:\n    \"\"\"\n    Maps EEG band features to emotional states.\n    Uses a rule-based heuristic suitable for real-time demos.\n    \"\"\"\n    def __init__(self):\n        pass\n    def detect_emotion(self, eeg_features: Dict[str, float]) -> Dict:\n        \"\"\"\n        Determine emotional state based on EEG band ratios.",
+        "detail": "emotion.emotion_mapping",
+        "documentation": {}
+    },
+    {
+        "label": "EmotionModel",
+        "kind": 6,
+        "importPath": "emotion.emotion_model",
+        "description": "emotion.emotion_model",
+        "peekOfCode": "class EmotionModel:\n    \"\"\"\n    Emotion detection model for Sentio.\n    Supports:\n    - rule-based inference\n    - optional ML model\n    \"\"\"\n    def __init__(self, model_path: str = None):\n        self.model = None\n        self.model_path = model_path",
+        "detail": "emotion.emotion_model",
+        "documentation": {}
+    },
+    {
+        "label": "EmotionType",
+        "kind": 6,
+        "importPath": "models.schemas",
+        "description": "models.schemas",
+        "peekOfCode": "class EmotionType(str, Enum):\n    calm = \"calm\"\n    focused = \"focused\"\n    relaxed = \"relaxed\"\n    excited = \"excited\"\n    stressed = \"stressed\"\nclass PatternType(str, Enum):\n    organic = \"organic\"\n    geometric = \"geometric\"\n    fluid = \"fluid\"",
+        "detail": "models.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "PatternType",
+        "kind": 6,
+        "importPath": "models.schemas",
+        "description": "models.schemas",
+        "peekOfCode": "class PatternType(str, Enum):\n    organic = \"organic\"\n    geometric = \"geometric\"\n    fluid = \"fluid\"\n    textile = \"textile\"\n# -----------------------------\n# SESSION CONFIGURATION\n# -----------------------------\nclass SessionConfig(BaseModel):\n    age: int = Field(..., ge=1, le=120)",
+        "detail": "models.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "SessionConfig",
+        "kind": 6,
+        "importPath": "models.schemas",
+        "description": "models.schemas",
+        "peekOfCode": "class SessionConfig(BaseModel):\n    age: int = Field(..., ge=1, le=120)\n    gender: str\n    pattern_type: PatternType\n    signal_sensitivity: float = Field(..., ge=0.0, le=1.0)\n    noise_control: float = Field(..., ge=0.0, le=1.0)\n    mac_address: str = Field(..., description=\"Muse 2 device MAC address\")\nclass SessionStartResponse(BaseModel):\n    session_id: str\n    status: str",
+        "detail": "models.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "SessionStartResponse",
+        "kind": 6,
+        "importPath": "models.schemas",
+        "description": "models.schemas",
+        "peekOfCode": "class SessionStartResponse(BaseModel):\n    session_id: str\n    status: str\nclass SessionStatus(BaseModel):\n    session_id: Optional[str] = None\n    state: str\n    start_time: Optional[float] = None\n    emotion_history_length: int\n# -----------------------------\n# CALIBRATION",
+        "detail": "models.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "SessionStatus",
+        "kind": 6,
+        "importPath": "models.schemas",
+        "description": "models.schemas",
+        "peekOfCode": "class SessionStatus(BaseModel):\n    session_id: Optional[str] = None\n    state: str\n    start_time: Optional[float] = None\n    emotion_history_length: int\n# -----------------------------\n# CALIBRATION\n# -----------------------------\nclass CalibrationStatus(BaseModel):\n    progress: float",
+        "detail": "models.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "CalibrationStatus",
+        "kind": 6,
+        "importPath": "models.schemas",
+        "description": "models.schemas",
+        "peekOfCode": "class CalibrationStatus(BaseModel):\n    progress: float\n    signal_quality: float\n    noise_level: float\n    status_message: str\n# -----------------------------\n# EEG DATA\n# -----------------------------\nclass EEGData(BaseModel):\n    timestamp: float",
+        "detail": "models.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "EEGData",
+        "kind": 6,
+        "importPath": "models.schemas",
+        "description": "models.schemas",
+        "peekOfCode": "class EEGData(BaseModel):\n    timestamp: float\n    alpha: float\n    beta: float\n    gamma: float\n    theta: float\n    delta: float\n    signal_quality: float\n# -----------------------------\n# EMOTION DETECTION",
+        "detail": "models.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "EmotionResult",
+        "kind": 6,
+        "importPath": "models.schemas",
+        "description": "models.schemas",
+        "peekOfCode": "class EmotionResult(BaseModel):\n    emotion: EmotionType\n    confidence: float\n# -----------------------------\n# PATTERN PARAMETERS\n# -----------------------------\nclass PatternParameters(BaseModel):\n    pattern_type: PatternType\n    color_palette: List[str]\n    complexity: float",
+        "detail": "models.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "PatternParameters",
+        "kind": 6,
+        "importPath": "models.schemas",
+        "description": "models.schemas",
+        "peekOfCode": "class PatternParameters(BaseModel):\n    pattern_type: PatternType\n    color_palette: List[str]\n    complexity: float\n    pattern_seed: int\nclass StreamConfiguration(BaseModel):\n    session_id: Optional[str] = None\n    state: str\n    age: Optional[int] = None\n    gender: Optional[str] = None",
+        "detail": "models.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "StreamConfiguration",
+        "kind": 6,
+        "importPath": "models.schemas",
+        "description": "models.schemas",
+        "peekOfCode": "class StreamConfiguration(BaseModel):\n    session_id: Optional[str] = None\n    state: str\n    age: Optional[int] = None\n    gender: Optional[str] = None\n    sampling_rate: int\n    channel_count: int\n    window_size: int\n    update_interval: float\n    pattern_type: PatternType",
+        "detail": "models.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "BrainStreamMessage",
+        "kind": 6,
+        "importPath": "models.schemas",
+        "description": "models.schemas",
+        "peekOfCode": "class BrainStreamMessage(BaseModel):\n    timestamp: float\n    alpha: float\n    beta: float\n    gamma: float\n    theta: float\n    delta: float\n    signal_quality: float\n    emotion: EmotionType\n    confidence: float",
+        "detail": "models.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "PatternMapper",
+        "kind": 6,
+        "importPath": "patterns.pattern_mapper",
+        "description": "patterns.pattern_mapper",
+        "peekOfCode": "class PatternMapper:\n    \"\"\"\n    Maps emotional states and EEG intensity into\n    parameters used by the frontend generative pattern engine.\n    \"\"\"\n    def __init__(self):\n        self.emotion_color_palettes = {\n            EmotionType.calm: [\n                \"#4F6D7A\",\n                \"#A6C8D8\",",
+        "detail": "patterns.pattern_mapper",
+        "documentation": {}
+    },
+    {
+        "label": "OscStreamSender",
+        "kind": 6,
+        "importPath": "services.osc_sender",
+        "description": "services.osc_sender",
+        "peekOfCode": "class OscStreamSender:\n    def __init__(self, enabled: bool, host: str, port: int, stream_address: str):\n        self.enabled = enabled\n        self.host = host\n        self.port = port\n        normalized_address = (stream_address or \"/emotion\").strip()\n        self.stream_address = normalized_address if normalized_address.startswith(\"/\") else f\"/{normalized_address}\"\n        self.client = SimpleUDPClient(host, port) if enabled else None\n    def send_payload(self, payload: Dict[str, Any]):\n        if not self.client or not payload:",
+        "detail": "services.osc_sender",
+        "documentation": {}
+    },
+    {
+        "label": "SessionState",
+        "kind": 6,
+        "importPath": "services.session_manager",
+        "description": "services.session_manager",
+        "peekOfCode": "class SessionState:\n    IDLE = \"idle\"\n    CONNECTING = \"connecting\"\n    CALIBRATING = \"calibrating\"\n    RUNNING = \"running\"\n    STOPPED = \"stopped\"\nclass SessionManager:\n    \"\"\"\n    Manages Sentio EEG sessions.\n    Handles configuration, state transitions, and session metadata.",
+        "detail": "services.session_manager",
+        "documentation": {}
+    },
+    {
+        "label": "SessionManager",
+        "kind": 6,
+        "importPath": "services.session_manager",
+        "description": "services.session_manager",
+        "peekOfCode": "class SessionManager:\n    \"\"\"\n    Manages Sentio EEG sessions.\n    Handles configuration, state transitions, and session metadata.\n    \"\"\"\n    def __init__(self):\n        self.current_session_id: Optional[str] = None\n        self.session_config: Dict[str, Any] = {}\n        self.session_state: str = SessionState.IDLE\n        self.start_time: Optional[float] = None",
+        "detail": "services.session_manager",
+        "documentation": {}
+    },
+    {
+        "label": "session_manager",
+        "kind": 5,
+        "importPath": "services.session_manager",
+        "description": "services.session_manager",
+        "peekOfCode": "session_manager = SessionManager()",
+        "detail": "services.session_manager",
+        "documentation": {}
+    },
+    {
+        "label": "start_streaming",
+        "kind": 2,
+        "importPath": "services.stream_service",
+        "description": "services.stream_service",
+        "peekOfCode": "def start_streaming() -> bool:\n    return session_manager.start_stream_thread(_run_stream_loop)",
+        "detail": "services.stream_service",
+        "documentation": {}
+    },
+    {
+        "label": "processor",
+        "kind": 5,
+        "importPath": "services.stream_service",
+        "description": "services.stream_service",
+        "peekOfCode": "processor = SignalProcessor(settings.muse_sampling_rate)\nemotion_model = EmotionModel()\npattern_mapper = PatternMapper()\nosc_sender = OscStreamSender(\n    enabled=settings.osc_enabled,\n    host=settings.osc_host,\n    port=settings.osc_port,\n    stream_address=settings.osc_stream_address,\n)\ndef _get_selected_pattern() -> PatternType:",
+        "detail": "services.stream_service",
+        "documentation": {}
+    },
+    {
+        "label": "emotion_model",
+        "kind": 5,
+        "importPath": "services.stream_service",
+        "description": "services.stream_service",
+        "peekOfCode": "emotion_model = EmotionModel()\npattern_mapper = PatternMapper()\nosc_sender = OscStreamSender(\n    enabled=settings.osc_enabled,\n    host=settings.osc_host,\n    port=settings.osc_port,\n    stream_address=settings.osc_stream_address,\n)\ndef _get_selected_pattern() -> PatternType:\n    configured_pattern = session_manager.session_config.get(",
+        "detail": "services.stream_service",
+        "documentation": {}
+    },
+    {
+        "label": "pattern_mapper",
+        "kind": 5,
+        "importPath": "services.stream_service",
+        "description": "services.stream_service",
+        "peekOfCode": "pattern_mapper = PatternMapper()\nosc_sender = OscStreamSender(\n    enabled=settings.osc_enabled,\n    host=settings.osc_host,\n    port=settings.osc_port,\n    stream_address=settings.osc_stream_address,\n)\ndef _get_selected_pattern() -> PatternType:\n    configured_pattern = session_manager.session_config.get(\n        \"pattern_type\",",
+        "detail": "services.stream_service",
+        "documentation": {}
+    },
+    {
+        "label": "osc_sender",
+        "kind": 5,
+        "importPath": "services.stream_service",
+        "description": "services.stream_service",
+        "peekOfCode": "osc_sender = OscStreamSender(\n    enabled=settings.osc_enabled,\n    host=settings.osc_host,\n    port=settings.osc_port,\n    stream_address=settings.osc_stream_address,\n)\ndef _get_selected_pattern() -> PatternType:\n    configured_pattern = session_manager.session_config.get(\n        \"pattern_type\",\n        settings.default_pattern_type,",
+        "detail": "services.stream_service",
+        "documentation": {}
+    },
+    {
+        "label": "Settings",
+        "kind": 6,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "class Settings(BaseSettings):\n    \"\"\"\n    Global configuration for Sentio backend.\n    \"\"\"\n    # FastAPI / server\n    app_name: str = \"Sentio EEG Backend\"\n    host: str = \"127.0.0.1\"\n    port: int = 8000\n    debug: bool = True\n    # Muse 2 configuration",
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "kind": 5,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "settings = Settings()",
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "root",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def root():\n    return {\"message\": \"Sentio EEG Backend is running.\"}\n# -----------------------------\n# Run with: uvicorn app.main:app --reload\n# -----------------------------\nif __name__ == \"__main__\":\n    import uvicorn\n    uvicorn.run(\n        \"main:app\",\n        host=settings.host,",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "logger = logging.getLogger(\"sentio.api\")\napp = FastAPI(title=settings.app_name, debug=settings.debug)\n# -----------------------------\n# CORS configuration\n# -----------------------------\norigins = [\n    \"http://localhost:8080\",  # React dev server\n    \"http://127.0.0.1:8080\",\n    \"http://10.208.194.245:8080\",  # Another common React dev server port\n    \"*\",  # Optional: allow all origins for demo",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "app = FastAPI(title=settings.app_name, debug=settings.debug)\n# -----------------------------\n# CORS configuration\n# -----------------------------\norigins = [\n    \"http://localhost:8080\",  # React dev server\n    \"http://127.0.0.1:8080\",\n    \"http://10.208.194.245:8080\",  # Another common React dev server port\n    \"*\",  # Optional: allow all origins for demo\n]",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "origins",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "origins = [\n    \"http://localhost:8080\",  # React dev server\n    \"http://127.0.0.1:8080\",\n    \"http://10.208.194.245:8080\",  # Another common React dev server port\n    \"*\",  # Optional: allow all origins for demo\n]\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=origins,\n    allow_credentials=True,",
+        "detail": "main",
+        "documentation": {}
+    }
+]

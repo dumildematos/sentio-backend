@@ -1,0 +1,14 @@
+fastapi==0.111.0
+uvicorn[standard]==0.23.2
+numpy==2.3.0
+scipy==1.17.1
+scikit-learn==1.8.0
+pylsl==1.17.6
+python-osc==1.9.3
+pydantic==2.6.1
+brainflow==5.8.0
+python-dotenv==1.0.0
+black==24.3.0
+isort==6.1.0
+mypy==1.19.1
+pydantic==2.12.5
