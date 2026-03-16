@@ -1,3 +1,4 @@
+from pydantic import Field
 from pydantic_settings import BaseSettings
 
 
@@ -11,6 +12,14 @@ class Settings(BaseSettings):
     host: str = "0.0.0.0"
     port: int = 8000
     debug: bool = True
+    cors_allowed_origins: list[str] = Field(
+        default_factory=lambda: [
+            "http://localhost",
+            "http://127.0.0.1",
+            "http://10.208.193.106",
+        ]
+    )
+    cors_allowed_origin_regex: str = r"^https?://(localhost|127\.0\.0\.1|10\.208\.193\.106)(:\d+)?$"
 
     # Muse 2 configuration
     muse_board_id: int = 22  # BoardIds.MUSE_2_BOARD.value

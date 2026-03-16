@@ -17,19 +17,10 @@ logger = logging.getLogger("sentio.api")
 
 app = FastAPI(title=settings.app_name, debug=settings.debug)
 
-# -----------------------------
-# CORS configuration
-# -----------------------------
-origins = [
-    "http://localhost:8080",  # React dev server
-    "http://127.0.0.1:8080",
-    "http://10.208.193.106:8080",  # Another common React dev server port
-    "*",  # Optional: allow all origins for demo
-]
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=settings.cors_allowed_origins,
+    allow_origin_regex=settings.cors_allowed_origin_regex,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -85,9 +76,9 @@ def root():
     return {"message": "Sentio EEG Backend is running."}
 
 
-# -----------------------------
-# Run with: uvicorn app.main:app --reload
-# -----------------------------
+# Run with either:
+#   python main.py
+#   uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 if __name__ == "__main__":
     import uvicorn
 
