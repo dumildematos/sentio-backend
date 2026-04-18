@@ -21,11 +21,18 @@ class Settings(BaseSettings):
     )
     cors_allowed_origin_regex: str = r"^https?://(localhost|127\.0\.0\.1|10\.208\.193\.106)(:\d+)?$"
 
-    # Muse 2 configuration
-    muse_board_id: int = 22  # BoardIds.MUSE_2_BOARD.value
+    # BrainFlow / Muse 2 configuration
+    muse_device_source: str = "auto"
+    muse_board_id: int = 38  # BoardIds.MUSE_2_BOARD.value
     muse_sampling_rate: int = 256  # Hz
     muse_window_size: int = 256  # samples per read
-    muse_mac_address: str = "00:11:22:33:44:55"  # Replace with your Muse 2 MAC address
+    muse_mac_address: str | None = None
+    muse_serial_number: str | None = None
+    brainflow_connection_timeout: int = 15
+    brainflow_stream_buffer_size: int = 45000
+    bluemuse_stream_name: str | None = None
+    bluemuse_lsl_stream_type: str = "EEG"
+    bluemuse_lsl_resolve_timeout: float = 3.0
 
     # EEG processing
     eeg_update_interval: float = 0.2  # seconds between WebSocket updates

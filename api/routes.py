@@ -1,5 +1,7 @@
 from fastapi import APIRouter, HTTPException
-from eeg.muse_connection import MuseConnection
+from brainflow.exit_codes import BrainFlowError, BrainFlowExitCodes
+from config import settings
+from eeg.muse_connection import MuseConnection, MuseConnectionError
 from services.session_manager import SessionState, session_manager
 from eeg.calibration import CalibrationManager
 from patterns.pattern_mapper import PatternMapper
@@ -9,6 +11,7 @@ from models.schemas import (
     SessionStartResponse,
     SessionStatus,
     CalibrationStatus,
+    EmotionType,
     PatternParameters,
     PatternType
 )
@@ -20,8 +23,35 @@ router = APIRouter()
 calibration_manager = CalibrationManager()
 pattern_mapper = PatternMapper()
 
-from config import settings
- # Muse device connection will be created per session
+
+def _build_muse_connection(session_config: dict) -> MuseConnection:
+    return MuseConnection(
+        device_source=session_config.get("device_source") or settings.muse_device_source,
+        board_id=int(session_config.get("board_id") or settings.muse_board_id),
+        mac_address=session_config.get("mac_address") or settings.muse_mac_address,
+        serial_number=session_config.get("serial_number") or settings.muse_serial_number,
+        serial_port=session_config.get("serial_port"),
+        stream_name=session_config.get("stream_name") or settings.bluemuse_stream_name,
+        timeout=int(session_config.get("timeout") or settings.brainflow_connection_timeout),
+        stream_buffer_size=settings.brainflow_stream_buffer_size,
+        lsl_stream_type=settings.bluemuse_lsl_stream_type,
+        lsl_resolve_timeout=settings.bluemuse_lsl_resolve_timeout,
+    )
+
+
+def _brainflow_http_status(error: BrainFlowError) -> int:
+    recoverable_codes = {
+        BrainFlowExitCodes.BOARD_NOT_READY_ERROR.value,
+        BrainFlowExitCodes.INVALID_ARGUMENTS_ERROR.value,
+        BrainFlowExitCodes.SYNC_TIMEOUT_ERROR.value,
+        BrainFlowExitCodes.PORT_ALREADY_OPEN_ERROR.value,
+        BrainFlowExitCodes.UNABLE_TO_OPEN_PORT_ERROR.value,
+        BrainFlowExitCodes.SER_PORT_ERROR.value,
+    }
+    return 400 if error.exit_code in recoverable_codes else 500
+
+
+# Muse device connection will be created per session
 
 
 # -----------------------------
@@ -29,21 +59,28 @@ from config import settings
 # -----------------------------
 
 
-@router.post("/session/start", response_model=SessionStartResponse)
+@router.post(
+    "/session/start",
+    response_model=SessionStartResponse,
+    responses={400: {"description": "Device connection problem"}, 500: {"description": "Unexpected startup failure"}},
+)
 def start_session(config: SessionConfig):
     """
     Start a new EEG session and check device connection.
     """
+    session_config = config.model_dump(mode="json")
+
     # Try to connect to Muse device
     try:
-        muse_connection = MuseConnection(mac_address=config.mac_address)
-        connected = muse_connection.connect()
+        muse_connection = _build_muse_connection(session_config)
+        muse_connection.connect()
+    except MuseConnectionError as e:
+        raise HTTPException(status_code=e.status_code, detail=f"Device connection failed: {str(e)}")
+    except BrainFlowError as e:
+        raise HTTPException(status_code=_brainflow_http_status(e), detail=f"Device connection failed: {str(e)}")
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Device connection failed: {str(e)}")
-    if not connected:
-        raise HTTPException(status_code=400, detail="Muse device not connected")
 
-    session_config = config.model_dump(mode="json")
     session_id = session_manager.start_session(session_config)
     session_manager.muse_connection = muse_connection
     session_manager.set_state(SessionState.CONNECTING)
@@ -84,7 +121,11 @@ def get_session_status():
 # CALIBRATION ENDPOINT
 # -----------------------------
 
-@router.get("/calibration/run", response_model=CalibrationStatus)
+@router.get(
+    "/calibration/run",
+    response_model=CalibrationStatus,
+    responses={400: {"description": "No active session"}, 500: {"description": "Calibration failure"}},
+)
 def run_calibration():
     """
     Run EEG calibration (baseline + signal quality).
@@ -96,7 +137,7 @@ def run_calibration():
     # Retrieve the active MuseConnection from session_manager
     muse_connection = getattr(session_manager, 'muse_connection', None)
     if muse_connection is None:
-        raise HTTPException(status_code=500, detail="No MuseConnection instance found for calibration")
+        raise HTTPException(status_code=500, detail="No BrainFlow connection instance found for calibration")
     was_streaming = session_manager.is_streaming()
 
     if was_streaming:
@@ -128,31 +169,36 @@ def run_calibration():
 # PATTERN ENDPOINTS
 # -----------------------------
 
-@router.get("/pattern/generate", response_model=PatternParameters)
+@router.get(
+    "/pattern/generate",
+    response_model=PatternParameters,
+    responses={400: {"description": "Invalid emotion supplied"}},
+)
 def generate_pattern(emotion: str, pattern_type: PatternType):
     """
     Generate pattern parameters based on emotion and EEG features.
     """
     # Use the last emotion from session history if available
     if session_manager.emotion_history:
-        emotion_value = session_manager.emotion_history[-1]
+        latest_emotion = session_manager.emotion_history[-1].get("emotion", emotion)
     else:
-        emotion_value = emotion
+        latest_emotion = emotion
 
+    try:
+        emotion_value = EmotionType(latest_emotion)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=f"Unknown emotion: {latest_emotion}") from exc
 
-        # Try to connect to Muse device using MAC address from payload
-        muse_connection = MuseConnection(mac_address=config.mac_address)
-        try:
-            connected = muse_connection.connect()
-        except Exception as e:
-            raise HTTPException(status_code=500, detail=f"Device connection failed: {str(e)}")
-        if not connected:
-            raise HTTPException(status_code=400, detail="Muse device not connected")
+    latest_stream_message = session_manager.get_latest_stream_message() or {}
+    eeg_features = {
+        band: float(latest_stream_message.get(band, 0.0) or 0.0)
+        for band in ("alpha", "beta", "gamma", "theta", "delta")
+    }
 
 
     pattern_params = pattern_mapper.map_pattern(
         emotion=emotion_value,
-        eeg_features=dummy_features,
+        eeg_features=eeg_features,
         selected_pattern=pattern_type
     )
 

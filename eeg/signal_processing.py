@@ -1,65 +1,74 @@
 import numpy as np
-from scipy.signal import welch
+import logging
+from brainflow.data_filter import DataFilter
+
+
+logger = logging.getLogger("sentio.signal")
 
 
 class SignalProcessor:
     """
-    Extract EEG frequency band powers from raw signals.
+    Extract EEG frequency band powers from raw signals using BrainFlow.
     """
 
     def __init__(self, sampling_rate=256):
-        self.sampling_rate = sampling_rate
+        self.sampling_rate = int(sampling_rate)
 
-    def bandpower(self, data, band):
-        """
-        Compute power of a specific frequency band using Welch PSD.
-        """
-        if data is None or len(data) < 2:
-            return 0.0
+    def _normalize_channel_major(self, eeg_data):
+        eeg_array = np.asarray(eeg_data, dtype=np.float64)
+        if eeg_array.ndim == 1:
+            eeg_array = eeg_array.reshape(-1, 1)
 
-        low, high = band
-        segment_length = min(self.sampling_rate, len(data))
+        if eeg_array.ndim != 2:
+            return None
 
-        freqs, psd = welch(
-            data,
-            fs=self.sampling_rate,
-            nperseg=segment_length
-        )
+        channel_major = eeg_array.T if eeg_array.shape[0] >= eeg_array.shape[1] else eeg_array
+        if channel_major.shape[0] == 0 or channel_major.shape[1] < 64:
+            return None
 
-        band_mask = (freqs >= low) & (freqs <= high)
-        if not np.any(band_mask):
-            return 0.0
+        finite_channel_mask = np.all(np.isfinite(channel_major), axis=1)
+        channel_major = channel_major[finite_channel_mask]
+        if channel_major.shape[0] == 0 or channel_major.shape[1] < 64:
+            return None
 
-        band_power = np.trapezoid(psd[band_mask], freqs[band_mask])
-
-        return band_power
+        return np.ascontiguousarray(channel_major, dtype=np.float64)
 
     def extract_features(self, eeg_data):
         """
-        Compute EEG band powers.
+        Compute EEG band powers and the BrainFlow feature vector.
         """
 
         if eeg_data is None or len(eeg_data) == 0:
             return None
 
-        eeg_array = np.asarray(eeg_data)
-        if eeg_array.ndim == 1:
-            signal = eeg_array
-        else:
-            signal = np.mean(eeg_array, axis=1)
+        channel_major = self._normalize_channel_major(eeg_data)
+        if channel_major is None:
+            return None
 
-        alpha = self.bandpower(signal, (8, 12))
-        beta = self.bandpower(signal, (13, 30))
-        gamma = self.bandpower(signal, (30, 45))
-        theta = self.bandpower(signal, (4, 7))
-        delta = self.bandpower(signal, (1, 4))
+        try:
+            avg_band_powers, std_band_powers = DataFilter.get_avg_band_powers(
+                channel_major,
+                list(range(channel_major.shape[0])),
+                self.sampling_rate,
+                True,
+            )
+        except Exception as exc:
+            logger.warning(
+                "Band power extraction failed for shape=%s sampling_rate=%s: %s",
+                channel_major.shape,
+                self.sampling_rate,
+                exc,
+            )
+            return None
 
-        total = alpha + beta + gamma + theta + delta + 1e-6
+        total = float(np.sum(avg_band_powers)) + 1e-6
+        feature_vector = np.concatenate((avg_band_powers, std_band_powers)).astype(float)
 
         return {
-            "alpha": alpha / total,
-            "beta": beta / total,
-            "gamma": gamma / total,
-            "theta": theta / total,
-            "delta": delta / total
+            "alpha": float(avg_band_powers[2] / total),
+            "beta": float(avg_band_powers[3] / total),
+            "gamma": float(avg_band_powers[4] / total),
+            "theta": float(avg_band_powers[1] / total),
+            "delta": float(avg_band_powers[0] / total),
+            "brainflow_feature_vector": feature_vector.tolist(),
         }

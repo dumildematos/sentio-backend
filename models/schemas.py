@@ -22,6 +22,12 @@ class PatternType(str, Enum):
     textile = "textile"
 
 
+class DeviceSource(str, Enum):
+    auto = "auto"
+    brainflow = "brainflow"
+    bluemuse = "bluemuse"
+
+
 # -----------------------------
 # SESSION CONFIGURATION
 # -----------------------------
@@ -32,7 +38,13 @@ class SessionConfig(BaseModel):
     pattern_type: PatternType
     signal_sensitivity: float = Field(..., ge=0.0, le=1.0)
     noise_control: float = Field(..., ge=0.0, le=1.0)
-    mac_address: str = Field(..., description="Muse 2 device MAC address")
+    device_source: DeviceSource = Field(default=DeviceSource.auto, description="EEG transport: auto, brainflow, or bluemuse.")
+    board_id: int = Field(default=38, description="BrainFlow board id. Muse 2 uses 38.")
+    mac_address: Optional[str] = Field(default=None, description="Optional Bluetooth MAC address for BrainFlow.")
+    serial_number: Optional[str] = Field(default=None, description="Optional BrainFlow device name or serial number for discovery.")
+    serial_port: Optional[str] = Field(default=None, description="Optional serial port for BLED112 or other BrainFlow transports.")
+    stream_name: Optional[str] = Field(default=None, description="Optional BlueMuse LSL stream name when multiple EEG streams are available.")
+    timeout: int = Field(default=15, ge=1, le=120, description="BrainFlow connection timeout in seconds.")
 
 
 class SessionStartResponse(BaseModel):
@@ -79,6 +91,8 @@ class EEGData(BaseModel):
 class EmotionResult(BaseModel):
     emotion: EmotionType
     confidence: float
+    mindfulness: Optional[float] = None
+    restfulness: Optional[float] = None
 
 
 # -----------------------------
@@ -95,6 +109,8 @@ class PatternParameters(BaseModel):
 class StreamConfiguration(BaseModel):
     session_id: Optional[str] = None
     state: str
+    device_source: DeviceSource
+    board_id: int
     age: Optional[int] = None
     gender: Optional[str] = None
     sampling_rate: int
@@ -127,6 +143,8 @@ class BrainStreamMessage(BaseModel):
 
     emotion: EmotionType
     confidence: float
+    mindfulness: Optional[float] = None
+    restfulness: Optional[float] = None
 
     pattern_seed: int
     pattern_type: PatternType
